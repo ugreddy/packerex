@@ -1,0 +1,23 @@
+{
+    "builders":[
+    {
+        "type":"amazon-ebs",
+        "access_key":"AKIAJFWWIDQAUOQGVMMA",
+        "secret_key":"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",
+        "region":"us-east-1",
+        "source_ami":"ami-c29e1cb8",
+        "instance_type":"t2.micro",
+        "ssh_username":"ubuntu",
+        "ami_name":"ubuntu from p"
+    }],
+
+    "provisioners":[
+        {
+            "type":"shell",
+            "inline" :
+            [
+                "sudo apt-get update",
+                "sudo apt-get install tomcat"
+            ]
+        }]
+}

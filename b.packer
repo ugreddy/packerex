@@ -1,0 +1,23 @@
+{
+    "variables":
+    {
+        "aws_access_key":"AKIAI5CAKFRODRRXGQIA",
+        "aws_secret_key":"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",
+        "aws_region":"us-east-1",
+        "instance_source_ami":"ami-c29e1cb8",
+        "aws_instance_type":"t2.micro"
+
+    },
+    "builders":[
+        {
+            "type":"amazon-ebs",
+            "access_key":"{{user `aws_access_key`}}",
+            "secret_key":"{{user `aws_secret_key`}}",
+            "region":"{{user `aws_region`}}",
+            "source_ami":"{{user `instance_source_ami`}}",
+            "instance_type":"{{user `aws_instance_type`}}",
+            "ami_name":"govardan",
+            "ssh_username":"ubuntu"
+        }
+    ]
+}
